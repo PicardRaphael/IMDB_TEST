@@ -1,3 +1,6 @@
+import { useLocation } from 'react-router';
+import PropTypes from 'prop-types';
+
 import {
     MyAppBar,
     MyToolbar,
@@ -6,19 +9,17 @@ import {
     MyMenuItem,
     MyLink
 } from './style/HeaderStyle';
-import navigation from '../../../config/navigation';
-import { useLocation } from 'react-router';
 
-const Header = () => {
+const Header = ({ navigation }) => {
     const { pathname } = useLocation();
 
     return (
         <MyAppBar position="fixed">
             <MyToolbar>
-                <MyTitle variant="h6">Movies</MyTitle>
+                {navigation.title && <MyTitle variant="h6">{navigation.title}</MyTitle>}
                 <MyMenu>
                     {
-                        navigation.map((element) => (
+                        navigation.nav.map((element) => (
                             <MyMenuItem key={element.key} selected={pathname === element.path}>
                                 <MyLink href={element.path}>{element.label}</MyLink>
                             </MyMenuItem>
@@ -29,6 +30,17 @@ const Header = () => {
         </MyAppBar>
     )
 }
-    
+
+Header.propTypes = {
+    navigation: PropTypes.shape({
+        title: PropTypes.string,
+        nav: PropTypes.arrayOf(PropTypes.shape({
+            path: PropTypes.string.isRequired,
+            key: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired
+        })).isRequired
+    }).isRequired
+}
+
 export default Header;
     

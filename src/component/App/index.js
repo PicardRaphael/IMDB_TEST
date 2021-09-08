@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Header from '../Layout/Header';
+import HeaderContainer from '../../container/HeaderContainer';
 
 const App = ({ routes }) => (
   <React.Suspense fallback={<CircularProgress />}>
@@ -18,7 +18,7 @@ const App = ({ routes }) => (
                 const Component = React.lazy(() => import(`../../${route.component}`))
                 return (
                   <>
-                    <Header />
+                    <HeaderContainer />
                     <main>
                         <Component {...props} />
                     </main>
@@ -34,12 +34,12 @@ const App = ({ routes }) => (
 );
 
 App.propTypes = {
-    routes: PropTypes.arrayOf(PropTypes.shape({
-        path: PropTypes.string.isRequired,
-        key: PropTypes.string.isRequired,
-        exact: PropTypes.bool,
-        component: PropTypes.string.isRequired,
-    }))
+  routes: PropTypes.arrayOf(PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired,
+      exact: PropTypes.bool,
+      component: PropTypes.string.isRequired,
+  }))
 }
 
 export default App;
