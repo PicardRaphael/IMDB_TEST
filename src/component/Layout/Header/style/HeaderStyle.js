@@ -11,7 +11,8 @@ export const MyToolbar = styled(Toolbar)({
 })
 
 export const MyAppBar = styled(AppBar)({
-    backgroundColor: '#032541'
+    backgroundColor: '#032541',
+    position: 'initial'
 })
 
 export const MyTitle = styled(Typography)({

@@ -14,7 +14,7 @@ const Header = ({ navigation }) => {
     const { pathname } = useLocation();
 
     return (
-        <MyAppBar position="fixed">
+        <MyAppBar>
             <MyToolbar>
                 {navigation.title && <MyTitle variant="h6">{navigation.title}</MyTitle>}
                 <MyMenu>
