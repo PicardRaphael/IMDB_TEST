@@ -7,7 +7,7 @@ const navigation = {
             label: "Tous les films",
         },
         {
-            path: "/popular",
+            path: "/top-10",
             key: "popular",
             label: "Top 10 films",
         },

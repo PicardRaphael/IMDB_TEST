@@ -6,9 +6,9 @@ const routes = [
     component: "container/MoviesContainer",
   },
   {
-    path: "/popular",
+    path: "/top-10",
     key: "popular",
-    component: "container/PopularContainer",
+    component: "container/BestMoviesContainer",
   },
   {
     path: "*",
