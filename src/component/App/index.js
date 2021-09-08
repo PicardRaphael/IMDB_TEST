@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
+
 import HeaderContainer from '../../container/HeaderContainer';
+import { 
+  MyMain
+} from './style/AppStyle';
 
 const App = ({ routes }) => (
   <React.Suspense fallback={<CircularProgress />}>
@@ -19,9 +23,9 @@ const App = ({ routes }) => (
                 return (
                   <>
                     <HeaderContainer />
-                    <main>
+                    <MyMain>
                         <Component {...props} />
-                    </main>
+                    </MyMain>
                   </>
                 )
               }
