@@ -1,10 +1,10 @@
 const  MoviesContainer = () => {
-    return (
-      <div className="App">
-          <h1>MoviesContainer</h1>
-      </div>
-    );
-  }
+  return (
+    <div>
+        MoviesContainer
+    </div>
+  );
+}
   
-  export default MoviesContainer;
+export default MoviesContainer;
   
