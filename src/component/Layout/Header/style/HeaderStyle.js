@@ -11,7 +11,7 @@ export const MyToolbar = styled(Toolbar)({
 })
 
 export const MyAppBar = styled(AppBar)({
-    backgroundColor: '#032541',
+    backgroundColor: '#373d6c',
     position: 'initial'
 })
 
@@ -39,7 +39,7 @@ export const MyMenuItem = styled(MenuItem)({
 })
 
 export const MyLink = styled(Link)({
-    color: '#98a6b1',
+    color: '#c2c7d8',
     '&:hover': {
         color: '#ffffff',
         textDecoration: 'none'
