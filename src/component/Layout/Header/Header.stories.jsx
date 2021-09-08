@@ -7,10 +7,9 @@ export default {
   title: 'Component/Header',
 };
 
-export const Header = args => <HeaderComponent {...args} />;
+const Template = args => <HeaderComponent {...args} />;
 
- // const Default = Template.bind({});
-
+export const Header = Template.bind({});
 Header.args = {
   navigation: {
     title: 'Storybook',
