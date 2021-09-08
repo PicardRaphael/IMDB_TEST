@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Header from '../Layout/Header';
 
 const App = ({ routes }) => (
   <React.Suspense fallback={<CircularProgress />}>
@@ -16,9 +17,12 @@ const App = ({ routes }) => (
               props => {
                 const Component = React.lazy(() => import(`../../${route.component}`))
                 return (
+                  <>
+                    <Header />
                     <main>
                         <Component {...props} />
                     </main>
+                  </>
                 )
               }
             }
