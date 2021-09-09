@@ -14,10 +14,11 @@ const useFetch = (url, number) => {
           const json = await res.json();
           if (res.status >= 400) {
             return reject(json.status_message) 
-          } 
+          }
           data = data.concat(json.results);
           page +=1
         }
+        data.map((d) => d.poster_path = `http://image.tmdb.org/t/p/w300${d.poster_path}`)
         resolve(data);
       })
     };
