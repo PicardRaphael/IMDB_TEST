@@ -11,6 +11,9 @@ export const MyCard = styled(Card)({
     backgroundColor: '#2f355d',
 });
 
+export const MyDivGlobalImg = styled(Box)({
+    minHeight: '440px'
+});
 export const MyDivImg = styled(Box)({
 });
 

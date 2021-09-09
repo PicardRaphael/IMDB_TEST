@@ -5,15 +5,18 @@ import {
     MyCardContent,
     MyCardMedia,
     MyTitle,
-    MyDivImg
+    MyDivImg,
+    MyDivGlobalImg
 } from './style/MovieCardStyle';
 
 const MovieCard = ({ movie }) => {
     return (
         <MyCard>
-            <MyDivImg>
-                <MyCardMedia component="img" src={movie.poster_path} alt={movie.title}/>
-            </MyDivImg>
+            <MyDivGlobalImg>
+                <MyDivImg>
+                    <MyCardMedia component="img" src={movie.poster_path} alt={movie.title}/>
+                </MyDivImg>
+            </MyDivGlobalImg>
             <MyCardContent>
                 <MyTitle>{movie.title}</MyTitle>
             </MyCardContent>
