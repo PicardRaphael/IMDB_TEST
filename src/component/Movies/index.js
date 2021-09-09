@@ -11,7 +11,7 @@ const  Movies = ({ movies }) => (
         <MyGrid container spacing={3}>
             {
                 movies.map((movie) => (
-                    <MyGridItem item xs={6} md={3} key={movie.id}>
+                    <MyGridItem item xs={6} md={2} key={movie.id}>
                         <MovieCard movie={movie} />
                     </MyGridItem>
                 ))
