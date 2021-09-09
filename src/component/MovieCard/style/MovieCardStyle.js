@@ -10,10 +10,12 @@ export const MyCard = styled(Card)({
 })
 
 export const MyCardMedia = styled(CardMedia)({
-    width: '100%'
+    width: '100%',
+    height: '28.125rem'
 })
 
-export const MyCardContent = styled(CardContent)({    
+export const MyCardContent = styled(CardContent)({
+
 })
 
 export const MyTitle = styled(Typography)(({

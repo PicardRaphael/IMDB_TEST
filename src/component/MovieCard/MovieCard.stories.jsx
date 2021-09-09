@@ -8,11 +8,11 @@ export default {
 
 };
 
-export const MovieCard = args => <div style={{ width: '13.75rem'}}><MovieCardComponent {...args} /></div>;
+export const MovieCard = args => <div style={{ width: '27.781rem'}}><MovieCardComponent {...args} /></div>;
 
 MovieCard.args = {
   movie: {
-    poster_path: 'https://www.themoviedb.org/t/p/w220_and_h330_face/au8scCY0oS9RRtgqeJbkIqyBj3U.jpg',
+    poster_path: 'http://image.tmdb.org/t/p/w300/au8scCY0oS9RRtgqeJbkIqyBj3U.jpg',
     title: 'The Tomorrow War'
   }
 };
