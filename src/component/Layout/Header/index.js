@@ -15,7 +15,7 @@ const Header = ({ navigation }) => {
 
     return (
         <MyAppBar>
-            <MyToolbar>
+            <MyToolbar id="header">
                 {navigation.title && <MyTitle variant="h6">{navigation.title}</MyTitle>}
                 <MyMenu>
                     {

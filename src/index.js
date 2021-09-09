@@ -6,11 +6,9 @@ import AppContainer from './container/AppContainer';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <AppContainer />
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById('root')
 );
 
