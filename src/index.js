@@ -4,12 +4,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import AppContainer from './container/AppContainer';
 import reportWebVitals from './reportWebVitals';
+import { MoviesProvider } from './store/reducers/MoviesContext';
 
 ReactDOM.render(
-    <Router>
-      <AppContainer />
-    </Router>,
-  document.getElementById('root')
+    <MoviesProvider>
+        <Router>
+            <AppContainer />
+        </Router>
+    </MoviesProvider>,
+    document.getElementById('root')
 );
 
 reportWebVitals();
