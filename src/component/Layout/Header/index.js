@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router';
 import PropTypes from 'prop-types';
-
 import {
     MyAppBar,
     MyToolbar,
@@ -21,7 +20,7 @@ const Header = ({ navigation }) => {
                     {
                         navigation.nav.map((element) => (
                             <MyMenuItem key={element.key} selected={pathname === element.path}>
-                                <MyLink href={element.path}>{element.label}</MyLink>
+                                <MyLink to={element.path}>{element.label}</MyLink>
                             </MyMenuItem>
                         ))
                     }

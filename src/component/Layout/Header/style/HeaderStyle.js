@@ -4,7 +4,9 @@ import AppBar from '@material-ui/core/AppBar'
 import Typography from '@material-ui/core/Typography'
 import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
-import Link from '@material-ui/core/Link'
+import {
+    Link,
+} from "react-router-dom";
  
 export const MyToolbar = styled(Toolbar)({
     flexGrow: 1
@@ -39,6 +41,7 @@ export const MyMenuItem = styled(MenuItem)({
 })
 
 export const MyLink = styled(Link)({
+    textDecoration: 'none',
     color: '#c2c7d8',
     '&:hover': {
         color: '#ffffff',
