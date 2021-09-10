@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import MovieCard from '../../component/MovieCard';
 import { useMoviesContext } from '../../store/reducers/MoviesContext';
 import {
@@ -28,6 +29,12 @@ const  MovieCardContainer = ({ movie }) => {
         />
     )
 }
-  
+
+MovieCardContainer.propTypes = {
+    movie: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+    }).isRequired,
+}
+
 export default MovieCardContainer;
   
