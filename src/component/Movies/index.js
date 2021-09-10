@@ -1,6 +1,6 @@
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import MovieCard from '../MovieCard';
+import MovieCardContainer from '../../container/MovieCardContainer';
 import ScrollTop from '../ScrollToTop';
 import {
     MyDivGlobal,
@@ -14,14 +14,14 @@ const  Movies = ({ movies, ...props }) => (
             {
                 movies.map((movie) => (
                     <MyGridItem item xs={6} md={2} key={movie.id}>
-                        <MovieCard movie={movie} />
+                        <MovieCardContainer movie={movie} />
                     </MyGridItem>
                 ))
             }
         </MyGrid>
         <ScrollTop {...props}>
             <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
+                <KeyboardArrowUpIcon />
             </Fab>
         </ScrollTop>
     </MyDivGlobal>
