@@ -1,49 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import React from "react";
+import PropTypes from "prop-types";
+import { Switch, Route } from "react-router-dom";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-import HeaderContainer from '../../container/HeaderContainer';
-import { 
-  MyMain
-} from './style/AppStyle';
+import HeaderContainer from "../../container/HeaderContainer";
+import { MyMain } from "./style/AppStyle";
 
 const App = ({ routes }) => (
   <React.Suspense fallback={<CircularProgress />}>
     <Switch>
-      {
-        routes.map((route) => (
-          <Route
-            key={route.key}
-            exact={route.exact}
-            path={route.path}
-            render={
-              props => {
-                const Component = React.lazy(() => import(`../../${route.component}`))
-                return (
-                  <>
-                    <HeaderContainer />
-                    <MyMain>
-                        <Component {...props} />
-                    </MyMain>
-                  </>
-                )
-              }
-            }
-          />
-        ))
-      }
+      {routes.map((route) => (
+        <Route
+          key={route.key}
+          exact={route.exact}
+          path={route.path}
+          render={(props) => {
+            const Component = React.lazy(() =>
+              import(`../../${route.component}`)
+            );
+            return (
+              <>
+                <HeaderContainer />
+                <MyMain>
+                  <Component {...props} />
+                </MyMain>
+              </>
+            );
+          }}
+        />
+      ))}
     </Switch>
   </React.Suspense>
 );
 
 App.propTypes = {
-  routes: PropTypes.arrayOf(PropTypes.shape({
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
       path: PropTypes.string.isRequired,
       key: PropTypes.string.isRequired,
       exact: PropTypes.bool,
       component: PropTypes.string.isRequired,
-  }))
-}
+    })
+  ),
+};
 
 export default App;

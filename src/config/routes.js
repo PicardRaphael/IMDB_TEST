@@ -13,8 +13,8 @@ const routes = [
   {
     path: "*",
     key: "404",
-    component: "component/Page404"
-  }
+    component: "component/Page404",
+  },
 ];
 
 export default routes;
